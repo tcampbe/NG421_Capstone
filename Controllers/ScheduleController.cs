@@ -26,5 +26,17 @@ namespace capstone.Controllers
             return schedules;
 
         }
+
+        [HttpPost]
+        public Schedule Post([FromBody]Schedule schedule)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Schedules.Add(schedule);
+                context.SaveChanges();
+            }
+            return schedule;
+        }
+
     }
 }

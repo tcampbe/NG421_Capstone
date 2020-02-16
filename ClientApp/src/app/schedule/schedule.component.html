@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Schedules</h1>
+
+<p *ngIf="!schedules"><em>Loading...</em></p>
+
+<table class="table table-striped" aria-labelledby="tableLabel" *ngIf="schedules">
+  <thead>
+    <tr>
+      <th>English</th>
+      <th>Math</th>
+      <th>Science</th>
+      <th>Social Studies </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of schedules">
+      <td>{{ s.english }}</td>
+      <td>{{ s.math }}</td>
+      <td>{{ s.science }}</td>
+      <td>{{ s.socialStudies }}</td>
+    </tr>
+  </tbody>
+</table>
+English
+<input [(ngModel)]="newSchedule.English" name="English" />
+Math
+<input [(ngModel)]="newSchedule.Math" name="Math" />
+Science
+<input [(ngModel)]="newSchedule.Science" name="Science" />
+Social Studies
+<input [(ngModel)]="newSchedule.SocialStudies" name="SocialStudies" />
+<button (click)="save()">Save</button>
+
+
+
